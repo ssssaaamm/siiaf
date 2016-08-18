@@ -1,0 +1,73 @@
+-----------------------------------------------------------------------------------
+									Registrar empresas
+-----------------------------------------------------------------------------------
+Esta funcionalidad implica la gestion (creacion, actualizacion y eliminacion) de las empresas de las cuales se desea llevar el control.
+
+
+-----------------------------------------------------------------------------------
+									Registrar clientes
+-----------------------------------------------------------------------------------
+Esta funcionalidad implica la gestion (creacion, actualizacion y eliminacion) de los 
+clientes que maneja cada una de las empresas. 
+
+
+-----------------------------------------------------------------------------------
+									Registrar cabezales
+-----------------------------------------------------------------------------------
+Esta funcionalidad implica la gestion (creacion, actualizacion y eliminacion) de los 
+cabezales que posee cada una de las empresas. 
+
+
+-----------------------------------------------------------------------------------
+								Configurar politica de cobro
+-----------------------------------------------------------------------------------
+Esta funcionalidad implica la configuracion de las politicas de cobro (duracion de periodo, tarifas, etc) aplicadas a los periodos de facturacion.
+
+Debe permitir modificar las diferentes variables que se aplican al cobro de los viajes.
+
+Detras de escena lo que se hara siempre que el usuario modifique la politica de cobro
+para una empresa especifica es:
+
+1.Obtener la politica de cobro con mayor id para la empresa especificada.
+2.Comparar cada uno de los campos con la politica la nueva politica.
+	2.1. Si todos los parametros son iguales:
+			No hacer nada
+	2.2. Si almenos un parametro es distinto:
+			Ingresar la nueva politica
+
+
+-----------------------------------------------------------------------------------
+							Configurar politica de pago
+-----------------------------------------------------------------------------------
+Esta funcionalidad implica la configuracion de las politicas de pago (duracion de periodo, tarifas, etc) que seran aplicadas en el siguiente periodo de pago de cada empresa
+
+Debe permitir modificar las diferentes variables que se aplican al cobro de los viajes.
+
+Detras de escena se hara algo similar a lo que se hace con las politicas de cobro
+
+
+-----------------------------------------------------------------------------------
+								Registrar viajes
+-----------------------------------------------------------------------------------
+Esta funcionalidad implica 
+
+
+------------------------------------------------------------------------------------
+								Consultar Planilla
+------------------------------------------------------------------------------------
+La planilla consistira en mostrar una lista de todos los empleados para una empresa 
+especifica. La lista debe mostrar las siguientes con las siguientes columnas
+
+Codigo empleado, nombre empleado, viajes internacionales (cantidad,monto), 
+viajes locales (cantidad,monto), viaticos (cantidad,monto), 
+valores agregados (cantidad,monto), ... en fin... todos los campos relevantes basandose
+en la tabla detalle_pago de la base de datos.
+
+El usuario podra dar click en la cantidad de viajes internacionales para ver el detalle, y lo mismo se aplicara para las demas columnas que lo ameriten.
+
+
+------------------------------------------------------------------------------------
+								Consultar Factura
+------------------------------------------------------------------------------------
+La facturacion consistira en mostrar una lista de todos los clientes para una empresa
+especifica, 

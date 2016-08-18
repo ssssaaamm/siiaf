@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+  	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+    <title>SIIAF VAPE</title>
+    
+   	<!-- Cargar templatetags para manejo de archivos estaticos -->
+    {% load staticfiles %}
+
+    <!-- CSS de Bootstrap -->
+   	<link href="{% static 'bootstrap/css/bootstrap.min.css' %}" rel="stylesheet" />
+
+    <!-- Si se necesita incluir css especifico aparte de bootstrap la siguiente linea muestra la sintaxis -->
+    
+    <!-- <link rel="stylesheet" type="text/css" href="{% static 'main/css/style.css' %}" /> -->
+
+   </head>
+
+
+
+	<!--CONTENIDO-->
+    <body>
+    	<div class="container">
+    		<div class="jumbotron">
+        <h1>PLANILLa APP</h1>
+        <p>Esta es la vista principal de la aplicacion planilla</p>
+      </div>
+    		<p>
+		        <button type="button" class="btn btn-lg btn-default">Default</button>
+		        <button type="button" class="btn btn-lg btn-primary">Primary</button>
+		        <button type="button" class="btn btn-lg btn-success">Success</button>
+		        <button type="button" class="btn btn-lg btn-info">Info</button>
+		        <button type="button" class="btn btn-lg btn-warning">Warning</button>
+		        <button type="button" class="btn btn-lg btn-danger">Danger</button>
+		        <button type="button" class="btn btn-lg btn-link">Link</button>
+		    </p>
+		    <p>
+		        <button type="button" class="btn btn-default">Default</button>
+		        <button type="button" class="btn btn-primary">Primary</button>
+		        <button type="button" class="btn btn-success">Success</button>
+		        <button type="button" class="btn btn-info">Info</button>
+		        <button type="button" class="btn btn-warning">Warning</button>
+		        <button type="button" class="btn btn-danger">Danger</button>
+		        <button type="button" class="btn btn-link">Link</button>
+		    </p>
+		    <p>
+		        <button type="button" class="btn btn-sm btn-default">Default</button>
+		        <button type="button" class="btn btn-sm btn-primary">Primary</button>
+		        <button type="button" class="btn btn-sm btn-success">Success</button>
+		        <button type="button" class="btn btn-sm btn-info">Info</button>
+		        <button type="button" class="btn btn-sm btn-warning">Warning</button>
+		        <button type="button" class="btn btn-sm btn-danger">Danger</button>
+		        <button type="button" class="btn btn-sm btn-link">Link</button>
+		    </p>
+		    <p>
+		        <button type="button" class="btn btn-xs btn-default">Default</button>
+		        <button type="button" class="btn btn-xs btn-primary">Primary</button>
+		        <button type="button" class="btn btn-xs btn-success">Success</button>
+		        <button type="button" class="btn btn-xs btn-info">Info</button>
+		        <button type="button" class="btn btn-xs btn-warning">Warning</button>
+		        <button type="button" class="btn btn-xs btn-danger">Danger</button>
+		        <button type="button" class="btn btn-xs btn-link">Link</button>
+		    </p>
+
+		    <li><a href="{% url 'main:index' %}">Ir a 'main app'</a></li>
+		    <li><a href="{% url 'planilla:index' %}">Ir a 'planilla app'</a></li>
+		    <li><a href="{% url 'facturacion:index' %}">Ir a 'facturacion app'</a></li>
+
+    	</div>
+    </body>
+
+
+
+    <!-- jQuery (Necesario para el funcionamiento de bootstrap) -->
+    <script src="{% static 'jquery/jquery.js' %}"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
+</html>
