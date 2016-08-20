@@ -11,6 +11,12 @@ def registrar_empresa(request):
 def registrar_cliente(request):
 	pass
 
+def registrar_motorista(request):
+	pass
+
+def registrar_cabezal(request):
+	pass
+
 def registrar_viaje(request):
 	pass
 
@@ -19,3 +25,4 @@ def configurar_politica_pago(request):
 
 def configurar_politica_cobro(request):
 	pass
+
