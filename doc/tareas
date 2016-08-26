@@ -1,3 +1,24 @@
+REGLAS BASICAS:
+NO SE PUEDEN ELIMINAR:
+
+Los Viajes cuyo periodo de facturacion o planilla ya paso.
+
+Los Clientes a los cuales ya se les realizo algun viaje.
+
+Los Cabezales que ya fueron utilizados en algun viaje.
+
+Los Motoristas que ya se les registro un viaje.
+
+
+NO SE PUEDEN MODIFICAR:
+
+Los Viajes cuyo periodo de planilla o facturacion ya paso.
+
+
+
+
+
+
 -----------------------------------------------------------------------------------
 									Registrar empresas
 -----------------------------------------------------------------------------------

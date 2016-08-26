@@ -1,23 +1,39 @@
 from django.shortcuts import render
+from django.http import HttpResponse, HttpResponseRedirect
+from django.core.urlresolvers import reverse
+from .models import Empresa
 
 # Create your views here.
 def index(request):
 	#La siguiente linea es solo para ejemplo
 	return render(request, 'main/index.html')
 
-def registrar_empresa(request):
+def empresas(request):
 	pass
 
-def registrar_cliente(request):
+def crear_empresa(request):
+	pass		
+
+
+def actualizar_empresa(request,empresa_id):
+	pass		
+
+
+def eliminar_empresa(request,empresa_id):
 	pass
 
-def registrar_motorista(request):
+
+
+def clientes(request):
 	pass
 
-def registrar_cabezal(request):
+def motoristas(request):
 	pass
 
-def registrar_viaje(request):
+def cabezales(request):
+	pass
+
+def viajes(request):
 	pass
 
 def configurar_politica_pago(request):

@@ -7,20 +7,32 @@ urlpatterns = [
 	#expresion: /main/
 	url(r'^$',views.index, name = 'index'), #cada aplicacion puede tener su propio index
 	
-	#expresion: /main/registro_empresas/
-	url(r'^registro_empresas/$',views.registrar_empresa, name = 'registrar_empresa'),
+	#expresion: /main/empresas/...
+	url(r'^empresas/$',views.empresas,name = 'empresas'),
+	url(r'^empresas/crear/$',views.crear_empresa, name = 'crear_empresa'),
+	url(r'^empresas/actualizar/(?P<empresa_id>[0-9]+)/$',views.actualizar_empresa, name = 'actualizar_empresa'),
+	url(r'^empresas/eliminar/(?P<empresa_id>[0-9]+)/$',views.eliminar_empresa, name = 'eliminar_empresa'),
 	
-	#expresion: /main/registro_clientes
-	url(r'^registro_clientes/$',views.registrar_cliente, name = 'registrar_cliente'),
+	#expresion: /main/clientes/...
+	url(r'^clientes/$',views.clientes, name = 'clientes'),
+	#url(r'^clientes/crear/$',views.crear_cliente, name = 'crear_cliente'),
+	#url(r'^clientes/actualizar/(?P<cliente_id>[0-9]+)/$',views.actualizar_cliente, name = 'actualizar_cliente'),
+	#url(r'^clientes/eliminar/(?P<cliente_id>[0-9]+)/$',views.eliminar_cliente, name = 'eliminar_cliente'),
 
-	#expresion: /main/registro_motoristas/
-	url(r'^registro_motoristas$',views.registrar_motorista, name = 'registrar_motorista'),
+	#expresion: /main/motoristas/...
+	url(r'^motoristas/$',views.motoristas, name = 'motoristas'),
+	#url(r'^motoristas/crear/$',views.crear_motorista, name = 'crear_motorista'),
+	#url(r'^motoristas/actualizar/(?P<motorista_id>[0-9]+)/$',views.actualizar_motorista, name = 'actualizar_motorista'),
+	#url(r'^motoristas/eliminar/(?P<motorista_id>[0-9]+)/$',views.eliminar_motorista, name = 'eliminar_motorista'),
 
-	#expresion: /main/registro_cabezales/
-	url(r'^registro_cabezales$',views.registrar_motorista, name = 'registrar_cabezal'),
+	#expresion: /main/cabezales/...
+	url(r'^cabezales/$',views.motoristas, name = 'cabezales'),
+	#url(r'^cabezales/crear/$',views.crear_motorista, name = 'crear_cabezal'),
+	#url(r'^cabezales/actualizar/(?P<cabezal_id>[0-9]+)/$',views.actualizar_motorista, name = 'actualizar_cabezal'),
+	#url(r'^cabezales/eliminar/(?P<cabezal_id>[0-9]+)/$',views.eliminar_motorista, name = 'eliminar_cabezal'),
 	
-	#expresion: /main/registro_viajes
-	url(r'^registro_viajes/$',views.registrar_viaje, name = 'registrar_viaje'),
+	#expresion: /main/viajes
+	url(r'^viajes/$',views.viajes, name = 'viajes'),
 	
 	#expresion: /main/politicas_pago/
 	url(r'^politicas_pago/$',views.configurar_politica_pago, name = 'configurar_politica_pago'),
