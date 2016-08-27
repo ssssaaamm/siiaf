@@ -1,4 +1,5 @@
 from django.db import models
+from django.utils import timezone
 
 # Create your models here.
 
@@ -216,7 +217,7 @@ class Viaje(models.Model):
 
 	tipo = models.CharField(max_length=1) # I-> Internacional, L->local
 
-	fecha_registro = models.DateTimeField()
+	fecha_registro = models.DateTimeField(default=timezone.now)
 
 	total_km = models.FloatField()
 
