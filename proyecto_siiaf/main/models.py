@@ -9,6 +9,9 @@ class Cliente(models.Model):
 	
 	descripcion = models.TextField(null=True)
 
+	def __str__(self):
+		return self.nombre
+
 	class Meta:
 		db_table = 'cliente'
 		
@@ -21,6 +24,9 @@ class Empresa(models.Model):
 	
 	clientes = models.ManyToManyField( Cliente, through='Afiliacion', through_fields=('empresa','cliente') )
 
+	def __str__(self):
+		return self.nombre
+	
 	class Meta:
 		#Forzar nombre de la tabla en la base de datos
 		db_table = 'empresa'
@@ -31,6 +37,9 @@ class Afiliacion(models.Model):
 	empresa = models.ForeignKey(Empresa, on_delete=models.CASCADE)
 
 	cliente = models.ForeignKey(Cliente, on_delete=models.CASCADE)
+
+	def __str__(self):
+		return self.empresa__nombre + '-' + self.cliente__nombre
 
 	class Meta:
 		db_table = 'afiliacion'
@@ -46,6 +55,9 @@ class Motorista(models.Model):
 
 	empresa = models.ForeignKey(Empresa, on_delete=models.CASCADE)
 
+	def __str__(self):
+		return self.nombre
+
 	class Meta:
 		db_table = 'motorista'
 
@@ -57,6 +69,9 @@ class Cabezal(models.Model):
 	descripcion = models.TextField(null=True)
 
 	empresa = models.ForeignKey(Empresa, on_delete=models.CASCADE)
+
+	def __str__(self):
+		return self.placa
 
 	class Meta:
 		db_table = 'cabezal'
@@ -77,6 +92,9 @@ class PoliticaCobro(models.Model):
 	tarifa_cruce_frontera = models.FloatField()
 
 	empresa = models.ForeignKey(Empresa, on_delete=models.CASCADE)
+
+	def __str__(self):
+		return self.id
 
 	class Meta:
 		db_table = 'politica_cobro'
@@ -102,6 +120,9 @@ class PoliticaPago(models.Model):
 
 	empresa = models.ForeignKey(Empresa, on_delete=models.CASCADE)
 
+	def __str__(self):
+		return self.id
+
 	class Meta:
 		db_table = 'politica_pago'
 
@@ -116,6 +137,9 @@ class PeriodoFacturacion(models.Model):
 	
 	politica_cobro = models.ForeignKey(PoliticaCobro, on_delete=models.CASCADE)
 
+	def __str__(self):
+		return self.inicio + '--' + self.fin
+
 	class Meta:
 		db_table = 'periodo_facturacion'
 
@@ -129,6 +153,9 @@ class PeriodoPlanilla(models.Model):
 	actual = models.DateTimeField()
 
 	politica_pago = models.ForeignKey(PoliticaPago, on_delete=models.CASCADE)
+
+	def __str__(self):
+		return self.inicio + '--' + self.fin
 
 	class Meta:
 		db_table = 'periodo_planilla'
@@ -165,6 +192,9 @@ class DetalleCobro(models.Model):
 	periodo_facturacion = models.ForeignKey(PeriodoFacturacion, on_delete=models.CASCADE)
 
 	afiliacion = models.ForeignKey(Afiliacion, on_delete=models.CASCADE)
+
+	def __str__(self):
+		return self.afiliacion__cliente__nombre + '-' + self.afiliacion__empresa__nombre + '---' + self.periodo_facturacion__inicio + '-' + self.periodo_facturacion__fin
 
 	class Meta:
 		db_table = 'detalle_cobro'
@@ -209,6 +239,9 @@ class DetallePago(models.Model):
 
 	periodo_planilla = models.ForeignKey(PeriodoPlanilla, on_delete=models.CASCADE)
 
+	def __str__(self):
+		return self.motorista__nombre + '---' + self.periodo_planilla__inicio
+
 	class Meta:
 		db_table = 'detalle_pago'
 
@@ -233,6 +266,10 @@ class Viaje(models.Model):
 
 	cabezal = models.ForeignKey(Cabezal, on_delete=models.CASCADE)
 
+	def __str__(self):
+		return self.id
+
+
 	class Meta:
 		db_table = 'viaje'
 
@@ -254,6 +291,9 @@ class Boleta(models.Model):
 	sentido = models.CharField(max_length=1)# I->Ida, R->Regreso, N->Ninguno
 
 	viaje = models.ForeignKey(Viaje, on_delete=models.CASCADE)
+
+	def __str__(self):
+		return self.codigo
 
 	class Meta:
 		db_table = 'boleta'
