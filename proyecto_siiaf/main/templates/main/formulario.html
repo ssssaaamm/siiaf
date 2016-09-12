@@ -1,0 +1,37 @@
+<!--mostrar los errores globales del formulario -->
+<ol>
+  {% for error in form.non_field_errors %}
+    <li>
+      <div class="alert alert-danger" role="alert">
+      <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+      {{ error|escape }}
+    </div>
+    </li>
+  {% endfor %}
+</ol>
+<!-- mostramos cada campo -->
+{% for field in form %}
+	<div class="form-group">
+		<!-- mostramos errores de cada campo -->
+  		{% if field.errors %}
+  			<ol>
+  				{% for error in field.errors %}
+  					<li>
+  						<div class="alert alert-danger" role="alert">
+							<span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+							{{ error|escape }}
+						</div>
+  					</li>
+  				{% endfor %}
+  			</ol>
+  		{% endif %}
+  		<!-- mostramos el label del campo -->
+  		<label for="{{ field.id_for_label }}" class="control-label">{{ field.label }}:</label>
+  		<!-- mostramos el campo -->
+  		{{ field }}
+  		<!-- mostramos texto de ayuda si existen -->
+  		{% if field.help_text %}
+  			<span class="help-block">{{ field.help_text|safe }}</span>
+  		{% endif %}
+		</div>
+{% endfor %}
